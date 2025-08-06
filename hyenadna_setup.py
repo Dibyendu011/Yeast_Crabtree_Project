@@ -1195,4 +1195,4 @@ for seq in full_df["sequence"] :
   
   
 # making a table of the mean-pooled word embeddings & saving locally for future use
-new_df.to_csv('output_non.csv', index=False)
+new_df.to_csv('output.csv', index=False)
