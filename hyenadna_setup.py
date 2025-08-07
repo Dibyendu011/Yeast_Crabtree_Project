@@ -1190,9 +1190,11 @@ for seq in full_df["sequence"] :
   model.eval()
   with torch.inference_mode():
     embeddings = model(tok_seq)
-  pooled_embeddings = embeddings.mean(dim=1)
+  pooled_embeddings = embeddings.max(dim=1)
   embed_df.append(pooled_embeddings[0].numpy())
   
   
 # making a table of the mean-pooled word embeddings & saving locally for future use
+embed_df_flat = [sublist[0] for sublist in embed_df]
+new_df = pd.DataFrame(embed_df_flat)
 new_df.to_csv('output.csv', index=False)
