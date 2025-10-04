@@ -1,5 +1,5 @@
 import os
-os.chdir("/home/ibab/Downloads/Classifying-DNA-strands-based-on-FASTA-sequence-main/")
+os.chdir("/path/to/")
 os.getcwd()
 import numpy as np
 import pandas as pd
@@ -38,7 +38,7 @@ full_df["sense"]=sense_list
 full_df = full_df.sample(frac=1, random_state=42).reset_index(drop=True)
 full_label = np.array(full_df["sense"])
 
-new_df = pd.read_csv("/home/ibab/Desktop/DIBYENDU/s2/self/ML/gpu_crabtree/final/count_matrix_base.csv") 
+new_df = pd.read_csv("/path/to/count_matrix_base.csv") 
 
 # defining KFold for cross validation
 kf = KFold(n_splits=10, shuffle=True, random_state=2020)
