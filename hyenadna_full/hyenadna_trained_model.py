@@ -1,5 +1,5 @@
 import os
-os.chdir("/mnt/data/shyam/dibyendu/crabtree_project/")
+os.chdir("/path/to/")
 print(os.getcwd())
 
 #!pip install einops
@@ -874,7 +874,7 @@ class HyenaDNAPreTrainedModel(PreTrainedModel):
         pretrained_model_name_or_path = os.path.join(path, model_name)
         if os.path.isdir(pretrained_model_name_or_path) and download == False:
             if config is None:
-                config = json.load(open("/mnt/data/shyam/dibyendu/crabtree_project/checkpoints/config.json")) # replaced with device location of config.json file downloaded from hugging-face
+                config = json.load(open("/path/to/config.json")) ### replaced with device location of config.json file downloaded from hugging-face
         else:
             hf_url = f'https://huggingface.co/LongSafari/{model_name}'
 
@@ -883,14 +883,14 @@ class HyenaDNAPreTrainedModel(PreTrainedModel):
             subprocess.run(command, shell=True)
 
             if config is None:
-                config = json.load(open("/mnt/data/shyam/dibyendu/crabtree_project/checkpoints/config.json"))
+                config = json.load(open("/path/to/config.json"))
 
         scratch_model = HyenaDNAModel(**config, use_head=use_head, n_classes=n_classes)  # the new model format
         loaded_ckpt = torch.load(
-            "/mnt/data/shyam/dibyendu/crabtree_project/checkpoints/weights.ckpt",
+            "/path/to/weights.ckpt",
             weights_only=False,
             map_location=torch.device(device)
-        ) # replaced with device location of weights.ckpt file downloaded from hugging-face
+        ) ### replaced with device location of weights.ckpt file downloaded from hugging-face
 
         # need to load weights slightly different if using gradient checkpointing
         if config.get("checkpoint_mixer", False):
