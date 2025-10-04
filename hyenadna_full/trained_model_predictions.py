@@ -1,5 +1,5 @@
 import os
-os.chdir("/home/ibab/Downloads/Classifying-DNA-strands-based-on-FASTA-sequence-main/")
+os.chdir("/path/to/")
 os.getcwd()
 import numpy as np
 import pandas as pd
@@ -43,7 +43,7 @@ split_point_2 = split_point + 5
 full_label = np.array(full_df.sense[split_point_2:])
 full_label
 
-new_df = pd.read_csv("/home/ibab/Desktop/DIBYENDU/s2/self/ML/gpu_crabtree/final/count_matrix_trained.csv") 
+new_df = pd.read_csv("/path/to/count_matrix_trained.csv") 
 
 
 # defining KFold for cross validation
