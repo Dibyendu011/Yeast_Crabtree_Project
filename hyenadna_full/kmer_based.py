@@ -16,7 +16,7 @@ from sklearn.preprocessing import LabelEncoder
 import shap
 import matplotlib.pyplot as plt
 import os
-os.chdir("/home/ibab/Downloads/Classifying-DNA-strands-based-on-FASTA-sequence-main/")
+os.chdir("/path/to/")
 os.getcwd()
 
 # making list of files in positive, negative directories
